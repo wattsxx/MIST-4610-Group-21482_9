@@ -14,6 +14,11 @@ Group Project 1: Data Base and Model for a new and innovative Workout Facility, 
 - [@nakulsajan](https://www.github.com/nakulsajan)
 ## Problem Description
 
+
+## Data Model
+
+![Data Model](https://github.com/wattsxx/GroupProjectDataModel/blob/main/GroupProjectDataModel.png)
+
 Database for a Southern Based Workout Facility, *Apex Fitness*. The Database includes several entities to record information about Inventory, Locations, Employees, Shifts and Shift Details, Visits by customers, Classes offered at locations, the different Memberships available, infortmation about our Customers, Products and their Suppliers, and finally Orders placed by Customers. 
 
 The Inventory entity records information about gym equipment per location. Some of this information includes quantity of specific machines, brand, model, and even cost and condition of the machine. 
@@ -39,9 +44,6 @@ The Products entity stores information about what food items we have available a
 The Orders entity is a associatve/weak entity between Products and Customer to determine which products they have ordered, and record data on the sale. This table records the date ordered, and the quantity of product ordered. This allows us to track which products we are selling the most of, as well as track what products specific customers buy more to further identify relationships between the customer and product. 
 
 The ShopSuppliers entity simply records the suppliers infromation that provide our products. We reccord their name, address, and phone as well as creating a shopSupplierID. We use this shopSupplierID within Products to allow us to not only know where the products came from, but which suppliers products sell the best. 
-## Data Model
-
-![Data Model](https://github.com/wattsxx/GroupProjectDataModel/blob/main/GroupProjectDataModel.png)
 
 ## Data Dictionary
 
