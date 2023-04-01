@@ -49,7 +49,6 @@ GROUP BY membershipType
 ORDER BY COUNT(visitID) DESC;
 
 
-
 TP_Q3()
 SELECT supplierName
 FROM ShopSuppliers
@@ -59,14 +58,12 @@ GROUP BY supplierName
 ORDER BY (SELECT SUM(productID*quantityOrdered) FROM Orders) DESC;
 
 
-
 TP_Q4() 
 SELECT AVG(productCalories) AS 'Average Calories'
 FROM Products
 JOIN Orders ON Products.productID = Orders.productID
 JOIN Customers ON Orders.customerID = Customers.customerID
 WHERE customerDOB BETWEEN '1993-03-30' AND '2003-03-30';
-
 
 
 TP_Q5()
@@ -78,6 +75,19 @@ GROUP BY Employees.employeeID
 ORDER BY COUNT(DISTINCT shiftDate)
 LIMIT 1;
 
+
+TP_Q6()
+SELECT DISTINCT(employeeName), jobTitle
+FROM Employees
+JOIN Class ON Employees.employeeID = Class.Employees_employeeID
+WHERE NOT EXISTS(SELECT * FROM Class WHERE Employees.employeeID = Class.Employees_employeeID AND locationID = 1);
+
+
+TP_Q7()
+SELECT Customers.customerName
+FROM Customers
+JOIN Membership ON Customers.membershipID = Membership.membershipID
+WHERE Membership.membershipType = "Basic" AND Customers.customerDOB BETWEEN "1970-1-1" AND "1990-1-1" AND Customers.customerName REGEXP "^B";
 
 
 TP_Q8()
