@@ -46,7 +46,7 @@ The Orders entity is a associatve/weak entity between Products and Customer to d
 The ShopSuppliers entity simply records the suppliers infromation that provide our products. We reccord their name, address, and phone as well as creating a shopSupplierID. We use this shopSupplierID within Products to allow us to not only know where the products came from, but which suppliers products sell the best. 
 
 ## Data Dictionary
-
+![Matrix](://github.com/wattsxx/The-Matrix/blob/main/The%20Matrix.png)
 
 ![Locations](https://github.com/wattsxx/Data-Dictionary/blob/main/Locations%20Table.png)
 
