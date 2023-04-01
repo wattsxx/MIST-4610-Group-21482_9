@@ -41,12 +41,32 @@ ORDER BY COUNT(classID) DESC;
 
 
 TP_Q2()
+SELECT membershipType, COUNT(visitID)
+FROM Membership
+JOIN Customers ON Membership.membershipID = Customers.Membership_membershipID
+JOIN Visit ON Customers.customerID = Visit.Customers_customerID
+GROUP BY membershipType
+ORDER BY COUNT(visitID) DESC;
+
 
 
 TP_Q3()
+SELECT supplierName
+FROM ShopSuppliers
+JOIN Products ON ShopSuppliers.shopSupplierID = Products.productSuppliedBy
+JOIN Orders ON Products.productID = Orders.productID
+GROUP BY supplierName
+ORDER BY (SELECT SUM(productID*quantityOrdered) FROM Orders) DESC;
 
 
-TP_Q4()
+
+TP_Q4() 
+SELECT AVG(productCalories) AS 'Average Calories'
+FROM Products
+JOIN Orders ON Products.productID = Orders.productID
+JOIN Customers ON Orders.customerID = Customers.customerID
+WHERE customerDOB BETWEEN '1993-03-30' AND '2003-03-30';
+
 
 
 TP_Q8()
