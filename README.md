@@ -2,7 +2,7 @@
 
 # MIST4610 Group 21482_9
 
-Group Project 1: Data Base and Model for New A Southern Based Workout Facility
+Group Project 1: Data Base and Model for New A Southern Based Workout Facility, *Apex Fitness*
 
 
 ## Authors
