@@ -32,7 +32,21 @@ The Shift entity contains information about what shifts we have for all location
 
 *INSERT SCREEN SHOT OF DATA DICTIONARY HERE*
 ## Ten Queries
+TP_Q1()
+SELECT employeeName, payRateHR, COUNT(classID) AS 'Number of Classes'
+FROM Employees
+JOIN Class ON Employees.employeeID = Class.Employees_employeeID
+GROUP BY employeeName, payRateHR
+ORDER BY COUNT(classID) DESC;
 
+
+TP_Q2()
+
+
+TP_Q3()
+
+
+TP_Q4()
 
 
 TP_Q8()
@@ -41,11 +55,15 @@ FROM Products
 JOIN Orders ON Products.productID = Orders.productID
 WHERE quantityOrdered > (SELECT AVG(quantityOrdered) FROM Orders WHERE Products.productID = Orders.productID)
 GROUP BY Products.productID, productFlavor;
+
+
 TP_Q9()
 SELECT SUM(cost*quantity)
 FROM Inventory 
 WHERE machineCondition = "poor"
 GROUP BY InventoryID;
+
+
 TP_Q10()
 SELECT SupplierName, 100*(SUM(productStock)/(SELECT SUM(productStock) FROM Products)) AS "Percentage of Stock"
 FROM ShopSuppliers
