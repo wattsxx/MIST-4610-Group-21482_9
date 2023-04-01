@@ -69,6 +69,17 @@ WHERE customerDOB BETWEEN '1993-03-30' AND '2003-03-30';
 
 
 
+TP_Q5()
+SELECT Employees.employeeID, employeeName, COUNT(DISTINCT shiftDate) as NumberofShifts
+FROM Employees
+JOIN shiftDetails ON Employees.employeeID = shiftDetails.employeeID
+WHERE Employees.reportsTo = "200217"
+GROUP BY Employees.employeeID
+ORDER BY COUNT(DISTINCT shiftDate)
+LIMIT 1;
+
+
+
 TP_Q8()
 SELECT Products.productID, productFlavor, COUNT(receiptID) 
 FROM Products
