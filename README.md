@@ -47,6 +47,32 @@ The ShopSuppliers entity simply records the suppliers infromation that provide o
 
 ## Data Dictionary
 
+
+![Locations](https://github.com/wattsxx/Data-Dictionary/blob/main/Locations%20Table.png)
+
+![Class](https://github.com/wattsxx/Data-Dictionary/blob/main/Class%20Table.png)
+
+![Customers](https://github.com/wattsxx/Data-Dictionary/blob/main/Customers%20Table.png)
+
+![Employees](https://github.com/wattsxx/Data-Dictionary/blob/main/Employees%20Table.png)
+
+![Inventory](https://github.com/wattsxx/Data-Dictionary/blob/main/Inventory%20Table.png)
+
+![Memberships](https://github.com/wattsxx/Data-Dictionary/blob/main/Membership%20Table.png)
+
+![Orders](https://github.com/wattsxx/Data-Dictionary/blob/main/Orders%20Table.png)
+
+![Products](https://github.com/wattsxx/Data-Dictionary/blob/main/Products%20Table.png)
+
+![Shift](https://github.com/wattsxx/Data-Dictionary/blob/main/Shift%20Table.png)
+
+![shiftDetails](https://github.com/wattsxx/Data-Dictionary/blob/main/shiftDetails%20Table.png)
+
+![ShopSuppliers](https://github.com/wattsxx/Data-Dictionary/blob/main/Shop%20suppliers%20Table.png)
+
+![Visit](https://github.com/wattsxx/Data-Dictionary/blob/main/Visit%20Table.png)
+
+
 [Link](https://docs.google.com/document/d/1d1Kczm4RgS-gKGNEknKKuGpcYVNTDvc4p7c3umfHKIU/edit?usp=sharing)
 
 ## Ten Queries
