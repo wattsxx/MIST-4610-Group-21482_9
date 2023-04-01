@@ -16,7 +16,7 @@ Group Project 1: Data Base and Model for New A Southern Based Workout Facility
 - [@nakulsajan](https://www.github.com/nakulsajan)
 ## Problem Description
 
-Database for a Southern Based Workout Facility, *INSERT NAME OF GYM HERE*. The Database includes several entities to record information about Inventory, Locations, Employees, Shifts and Shift Details, Visits by customers, Classes offered at locations, the different Memberships available, infortmation about our Customers, Products and their Suppliers, and finally Orders placed by Customers. 
+Database for a Southern Based Workout Facility, *Apex Fitness*. The Database includes several entities to record information about Inventory, Locations, Employees, Shifts and Shift Details, Visits by customers, Classes offered at locations, the different Memberships available, infortmation about our Customers, Products and their Suppliers, and finally Orders placed by Customers. 
 
 The Inventory entity records information about gym equipment per location. Some of this information includes quantity of specific machines, brand, model, and even cost and condition of the machine. 
 
@@ -25,6 +25,22 @@ The Locations entity records basic information for each of our locations, includ
 The Employees entity records information on those employed at our facilities. We record vital information such as their name, job title, payrate, and even who they report to. We made this entity join onto itself so we could express those employees with employees that report to them. We also created this as a non-mandatory foreign key, allowing us the ability to leave reportsTo null in the case of a supervisor. Finally we give every employee their own ID which is used in tracking them within other entities. 
 
 The Shift entity contains information about what shifts we have for all locations. This provides the start and end time for each shift. Shifts are identified by their primary key shiftID. 
+
+The shiftDetails entity contains more specific information about the instances of a shift. We made this an associative/weak entity between Employees and Shift in order to track which employees are working each shift as well as how long the employee worked. We wanted to track this incase employees were working more than one shift, multiple shifts or less than a shift. This way allows us to track specific employees and the hours they worked to easily detemine their total hours. 
+
+The Visit entity is an associative/weak entity between Customers and Location. We made this an identifying relationship as you cannot have a Visit without a Customer and a Location to Visit. We record data here such as which customer visited, what location, the time of the visit, and even the visit date. This allows us to know when are peak times of activity are, as well as what days may be more active than others. 
+
+The Class entity is another associative/weak entity that is between the customer and an employee. This again is an identifying relationship because a class is held by an employee, and in the event that no customer would participate, the class would be cancelled. The Class entity allows us to store information about which employee is hosting the class, the customer that attends, a start and end time, a class title, and a classID. This allows us to store what classes we have available and create a schedule between the customer and the employee hosting the class. We can store when the class begins and ends, and what kinds of classes we have available. 
+
+The Memberships entity shows which memberships we have available. We reccord a unique membershipID for each tier of membership, as well as each tiers respective information. Each membership has a name, platinum basic or gold, a monthly rate for the membership, and features that each member obtains for a certain tier of membership. This allows us to track what tier each customer is, and determine their level of access to unique features. 
+
+The Customers entity records the customers name, phone, address, DOB, and their membershipID. This allows us to store basic information about the customer, and the customerID helps to idnetify the customer when using the Visit and Class entities.
+
+The Products entity stores information about what food items we have available at our location. This is what sets us apart from every other gym, allowing the customer to purchase in house protein shakes and items instead of dealing with the troubles of making their own. It is super convenient to the customer, and convenience is a service customers will pay for. Outside of our reason for the addition of a in house menu, our products table includes basic information such as calories, flavor, quantity in stock, price, productID, and who its supplied by. We use this productID in order to track details on our orders from customers. 
+
+The Orders entity is a associatve/weak entity between Products and Customer to determine which products they have ordered, and record data on the sale. This table records the date ordered, and the quantity of product ordered. This allows us to track which products we are selling the most of, as well as track what products specific customers buy more to further identify relationships between the customer and product. 
+
+The ShopSuppliers entity simply records the suppliers infromation that provide our products. We reccord their name, address, and phone as well as creating a shopSupplierID. We use this shopSupplierID within Products to allow us to not only know where the products came from, but which suppliers products sell the best. 
 ## Data Model
 
 *INSERT SCREEN SHOT OF DATA MODEL HERE*
