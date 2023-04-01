@@ -72,8 +72,6 @@ The ShopSuppliers entity simply records the suppliers infromation that provide o
 ![Visit](https://github.com/wattsxx/Data-Dictionary/blob/main/Visit%20Table.png)
 
 
-[Link](https://docs.google.com/document/d/1d1Kczm4RgS-gKGNEknKKuGpcYVNTDvc4p7c3umfHKIU/edit?usp=sharing)
-
 ## Ten Queries
 TP_Q1()
 SELECT employeeName, payRateHR, COUNT(classID) AS 'Number of Classes'
