@@ -163,7 +163,7 @@ FROM ShopSuppliers
 JOIN Products ON ShopSuppliers.shopSupplierID = Products.productSuppliedBy
 GROUP BY shopSupplierID;
 
-Description Q10: This query details the makeup of the company’s products. It returns the name of each supplier and the percentage of total products in stock that those companies’ products account for. The idea behind this query from a manager’s perspective is that it is important to know where our products come from. If we know the suppliers of our products and their contributions to our company, we can better the relationships that we most depend on. 
+Description Q10:   This query details the makeup of the company’s products. It returns the name of each supplier and the percentage of total products in stock that those companies’ products account for. The idea behind this query from a manager’s perspective is that it is important to know where our products come from. If we know the suppliers of our products and their contributions to our company, we can better the relationships that we most depend on. 
 
 ## The Matrix
 
