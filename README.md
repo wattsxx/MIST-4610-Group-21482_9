@@ -7,11 +7,11 @@ Group Project 1: Data Base and Model for a new and innovative Workout Facility, 
 
 ## Authors
 
-- [@wattsxx](https://www.github.com/wattsxx)
-- [@Mikecwagner21](https://www.github.com/Mikecwagner21)
-- [@Angeladc](https://www.github.com/Angeladc)
-- [@josephgmurphy](https://www.github.com/josephgmurphy)
-- [@nakulsajan](https://www.github.com/nakulsajan)
+- Ethan [@wattsxx](https://www.github.com/wattsxx)
+- Michael [@Mikecwagner21](https://www.github.com/Mikecwagner21)
+- Angela [@Angeladc](https://www.github.com/Angeladc)
+- Joe [@josephgmurphy](https://www.github.com/josephgmurphy)
+- Nakul [@nakulsajan](https://www.github.com/nakulsajan)
 ## Problem Description
 
   When analyzing the current amenities that gyms today have to offer, we noticed a serious window of opportunity. Proper Diet and Calorie replenishment is vital in one’s journey to peak physical health, a need not met by today’s gym standard. This is why Apex Fitness chose to bring the nutrients to the customer, allowing them to reach their peak physical performance. Our model displays the necessary database and model for our Apex Fitness chain. We have created a model to allow us to track our statistics across nearly every branch imaginable. From Customers to Employees, Orders to Inventory, we are able to find every statistic and number needed to provide our customers with the best workout experience available. More specifically we have 12 separate entities, 4 of which are associative entities, tracking our main departments. We collect extensive data on inventory, customers, employees, products, and the services we provide. Through our 12 entities we collect information on each branch in the most efficient way possible, allowing us to cross compare data across multiple entities. You will find a few examples of the efficiency of our database in the queries mentioned below, which display the level of detail we record from our facilities. Through the use of our data model, data base, and ability to query, we are able to provide an Apex level experience to our customers. 
