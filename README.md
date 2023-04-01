@@ -82,6 +82,7 @@ JOIN Class ON Employees.employeeID = Class.Employees_employeeID
 GROUP BY employeeName, payRateHR
 ORDER BY COUNT(classID) DESC;
 
+Description Q1: This query identifies the names and pay rates of all employees who have taught classes, along with the number of classes they have taught from most to least. From a managerial perspective, one would need this query to identify the performance and efforts of those employees who teach classes, guided by the number of classes taught. We can identify if the top-performing employees are getting fair enough compensation, and guide a few pay rate decisions through this data. 
 
 TP_Q2()
 SELECT membershipType, COUNT(visitID)
@@ -91,6 +92,7 @@ JOIN Visit ON Customers.customerID = Visit.Customers_customerID
 GROUP BY membershipType
 ORDER BY COUNT(visitID) DESC;
 
+Description Q2: This query identifies which membership type makes up the most visits compared to the others. This could be useful in terms of identifying which memberships are the most popular among the most active members, helpful with deciding new marketing strategies for certain memberships or maybe even thinking about providing price deals or discounts on these memberships. 
 
 TP_Q3()
 SELECT supplierName
@@ -100,6 +102,7 @@ JOIN Orders ON Products.productID = Orders.productID
 GROUP BY supplierName
 ORDER BY (SELECT SUM(productID*quantityOrdered) FROM Orders) DESC;
 
+Description Q3: This query determines which of the suppliers products are the most to least popular. This will be helpful in determining which products to keep ordering from our suppliers and keep our shop stocked on these items to help build and maintain customer loyalty.
 
 TP_Q4() 
 SELECT AVG(productCalories) AS 'Average Calories'
@@ -108,6 +111,7 @@ JOIN Orders ON Products.productID = Orders.productID
 JOIN Customers ON Orders.customerID = Customers.customerID
 WHERE customerDOB BETWEEN '1993-03-30' AND '2003-03-30';
 
+Description Q4: This query returns the average amount of Calories consumed within all orders made by customers between the ages of 20-30. If we know the eating habits of an important generational cohort such as 20 year olds, we can order/make better products that better suit their needs. Additionally, we can market more aggressively products with an amount of Calories that this age group tends to like.
 
 TP_Q5()
 SELECT Employees.employeeID, employeeName, COUNT(DISTINCT shiftDate) as NumberofShifts
@@ -118,6 +122,7 @@ GROUP BY Employees.employeeID
 ORDER BY COUNT(DISTINCT shiftDate)
 LIMIT 1;
 
+Description Q5: This query identifies which employee has worked the most shifts reporting to a certain location manager, which in this case is employeeID 200217. This is important from a managerial perspective because we can determine which employees are eligible for full-time or stay in part-time positions depending on the shifts worked.
 
 TP_Q6()
 SELECT DISTINCT(employeeName), jobTitle
@@ -125,6 +130,7 @@ FROM Employees
 JOIN Class ON Employees.employeeID = Class.Employees_employeeID
 WHERE NOT EXISTS(SELECT * FROM Class WHERE Employees.employeeID = Class.Employees_employeeID AND locationID = 1);
 
+Description Q6: This query identifies the names of all employees who have not taught any classes at a particular location. We can choose from any location to pull this data out of. From a managerial perspective, this data could be useful in terms of resource allocation planning. If an excessive amount of employees have not taught classes at a location, resources could be allocated to help these employees start teaching and maybe decide to open up more class offerings within that location, instead of putting them towards those where many have taught. 
 
 TP_Q7()
 SELECT Customers.customerName
@@ -132,6 +138,7 @@ FROM Customers
 JOIN Membership ON Customers.membershipID = Membership.membershipID
 WHERE Membership.membershipType = "Basic" AND Customers.customerDOB BETWEEN "1970-1-1" AND "1990-1-1" AND Customers.customerName REGEXP "^B";
 
+Description Q7: This query relays the names of customers that have the “basic” membership and were also born between 1970 and 1990. This could be helpful when working for a gym as we are able to specify the membership type of the customer while simultaneously finding out both date of birth and alphabetically finding the name. If someone was working at the front desk and working with a customer, the system would be able to verify that the person was a member and let them in.
 
 TP_Q8()
 SELECT Products.productID, productFlavor, COUNT(receiptID) 
@@ -140,6 +147,7 @@ JOIN Orders ON Products.productID = Orders.productID
 WHERE quantityOrdered > (SELECT AVG(quantityOrdered) FROM Orders WHERE Products.productID = Orders.productID)
 GROUP BY Products.productID, productFlavor;
 
+Description Q8: This query lists the number of orders for a certain product that contains a larger quantity purchased than the average for that product. This could be useful from a managerial perspective because it can determine which products are above average on the popularity spectrum. We could work on price deals for these popular products and new marketing strategies for them.
 
 TP_Q9()
 SELECT SUM(cost*quantity)
@@ -147,12 +155,15 @@ FROM Inventory
 WHERE machineCondition = "poor"
 GROUP BY InventoryID;
 
+Description Q9: In any gym the equipment will eventually wear down due to use, and will end up costing the business some money. Gym equipment is something that also needs to be replaced and knowing how much money that could potentially send them back is important. With this, knowing which equipment could potentially go bad in the nearby future is also important in planning ahead for anything that may come up.
 
 TP_Q10()
 SELECT SupplierName, 100*(SUM(productStock)/(SELECT SUM(productStock) FROM Products)) AS "Percentage of Stock"
 FROM ShopSuppliers
 JOIN Products ON ShopSuppliers.shopSupplierID = Products.productSuppliedBy
 GROUP BY shopSupplierID;
+
+Description Q10: This query details the makeup of the company’s products. It returns the name of each supplier and the percentage of total products in stock that those companies’ products account for. The idea behind this query from a manager’s perspective is that it is important to know where our products come from. If we know the suppliers of our products and their contributions to our company, we can better the relationships that we most depend on. 
 
 # The Matrix
 
