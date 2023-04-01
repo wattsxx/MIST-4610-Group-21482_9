@@ -33,3 +33,13 @@ The Shift entity contains information about what shifts we have for all location
 *INSERT SCREEN SHOT OF DATA DICTIONARY HERE*
 ## Ten Queries
 
+
+
+
+
+
+TP_Q10()
+SELECT SupplierName, 100*(SUM(productStock)/(SELECT SUM(productStock) FROM Products)) AS "Percentage of Stock"
+FROM ShopSuppliers
+JOIN Products ON ShopSuppliers.shopSupplierID = Products.productSuppliedBy
+GROUP BY shopSupplierID;
